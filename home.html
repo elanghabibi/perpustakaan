@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perpustakaan</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="navbar-logo"><h1>PPP</h1></div>
+
+      <nav class="navbar-menu">
+        <a href="home.html" class="navbar-item">Beranda</a>
+        <a href="pages/about.html" class="navbar-item">Tentang</a>
+      </nav>
+    </header>
+
+    <div class="main-content">
+      <section class="home" id="home">
+        <h2>Perpustakaan Suka Maju</h2>
+
+        <div class="home-search">
+          <input id="searchBook" type="text" placeholder="Cari judul buku" />
+          <button type="submit" onclick="searchBook()">
+            <i class="bx bx-search"></i>
+          </button>
+        </div>
+
+        <button class="home-book-list" onclick="openBookList()">
+          Daftar Buku <i class="bx bx-chevron-right"></i>
+        </button>
+
+        <button class="home-add-book" onclick="openAddBook()">
+          Tambah Buku <i class="bx bx-chevron-right"></i>
+        </button>
+      </section>
+
+      <div id="bookListModal">
+        <header>
+          <i class="bx bx-left-arrow-alt" onclick="closeBookList()"></i>
+          <h1>Daftar Buku</h1>
+          <i class="bx bx-dots-vertical-rounded"></i>
+        </header>
+
+        <div id="bookList"></div>
+      </div>
+
+      <div id="addBookModal">
+        <header>
+          <i class="bx bx-left-arrow-alt" onclick="closeAddBook()"></i>
+          <h1>Tambah Buku</h1>
+          <i class="bx bx-dots-vertical-rounded"></i>
+        </header>
+
+        <div class="add-book">
+          <form id="addBookForm">
+            <label for="coverBookInput">Cover book (url)</label>
+            <input type="url" id="coverBookInput" />
+
+            <label for="titleInput">Judul buku</label>
+            <input type="text" id="titleInput" required />
+
+            <label for="authorInput">Pengarang</label>
+            <input type="text" id="authorInput" required />
+
+            <label for="yearPublicationInput">Tahun Terbit</label>
+            <input type="number" id="yearPublicationInput" required />
+
+            <button type="submit" onclick="addBook()">
+              <i class="bx bx-plus"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="resultSearchModal">
+        <header>
+          <i class="bx bx-left-arrow-alt" onclick="closeResultSearch()"></i>
+          <h1>Hasil Pencarian</h1>
+          <i class="bx bx-dots-vertical-rounded"></i>
+        </header>
+        <div id="resultSearch"></div>
+      </div>
+    </div>
+  </body>
+  <script src="assets/js/script.js"></script>
+</html>
